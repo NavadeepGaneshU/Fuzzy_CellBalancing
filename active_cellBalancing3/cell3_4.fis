@@ -1,0 +1,49 @@
+[System]
+Name='cell3_4'
+Type='mamdani'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='dSOC3_4'
+Range=[0 5]
+NumMFs=3
+MF1='LOW':'trimf',[-2.085 0 2.085]
+MF2='MID':'trimf',[0.4167 2.5 4.583]
+MF3='HIGH':'trimf',[2.917 5 7.085]
+
+[Input2]
+Name='aSOC3_4'
+Range=[0 100]
+NumMFs=3
+MF1='LOW':'trimf',[-41.67 0 41.67]
+MF2='MID':'trimf',[8.333 50 91.67]
+MF3='HIGH':'trimf',[58.33 100 141.7]
+
+[Output1]
+Name='Out3_4'
+Range=[0.25 0.75]
+NumMFs=5
+MF1='LOW':'trimf',[0.04167 0.25 0.4583]
+MF2='MID':'trimf',[0.2917 0.5 0.7083]
+MF3='HIGH':'trimf',[0.5417 0.75 0.9583]
+MF4='MIDLOW':'trimf',[0.25 0.375 0.5]
+MF5='MIDHIGH':'trimf',[0.5 0.625 0.75]
+
+[Rules]
+1 3, 1 (1) : 1
+1 2, 4 (1) : 1
+1 1, 2 (1) : 1
+2 3, 2 (1) : 1
+2 2, 5 (1) : 1
+2 1, 3 (1) : 1
+3 1, 3 (1) : 1
+3 2, 3 (1) : 1
+3 3, 3 (1) : 1
